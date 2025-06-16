@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="orange_500">#FF9800</color>
+    <color name="green_500">#2aeb7d</color>
+    <color name="red_500">#ed3221</color>
+    <color name="purple_500">#8a42f5</color>
+    <color name="purple_700">#7B1FA2</color>
+    <color name="teal_200">#80CBC4</color>
+    <color name="nav_item_color">#2f2626</color>
+    <color name="myColor">#FF0000</color>
+    <color name="diagnose">#009688</color>
+
+
+    <color name="light_green">#90EE90</color> <!-- Light Green Background -->
+    <color name="dark_green">#006400</color> <!-- Dark Green (optional for buttons or text) -->
+    <color name="button_black">#000000</color> <!-- Button Background -->
+    <color name="button_text_white">#FFFFFF</color>
+    <color name="colorAccent">#FF4081</color> <!-- Or any color you prefer -->
+
+
+
+
+        <color name="colorPrimary">#1BF0A3</color>
+        <color name="black">#FF000000</color>
+        <color name="white">#FFFFFFFF</color>
+        <color name="yellow">#FFDD00</color>
+
+        <!-- Light mode color -->
+    <color name="status_bar_light_mode_color">@color/white</color>
+    <!-- Dark mode color -->
+    <color name="status_bar_dark_mode_color">#1C1B1F</color>
+
+
+</resources>

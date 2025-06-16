@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".CameraActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_preview"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/image_capture_button">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/viewFinder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/animation_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/camera_corner" />
+            </androidx.camera.view.PreviewView>
+
+            <ImageView
+                android:id="@+id/captureImagePreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                android:contentDescription="image captured" />
+
+            <ImageView
+                android:id="@+id/focusRing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_auto_focus_24"
+                android:visibility="invisible"
+                android:contentDescription="Focus ring"
+                android:layout_gravity="center" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back_button"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="Back"
+                app:icon="@drawable/ic_back_24"
+                app:iconSize="24dp"
+                app:iconTint="@color/white"
+                android:layout_gravity="start|top" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/help_button"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="Help"
+                app:icon="@drawable/ic_help_24"
+                app:iconSize="24dp"
+                app:iconTint="@color/white"
+                android:layout_gravity="end|top" />
+
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/image_capture_button"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="Capture a plant photo"
+        app:icon="@drawable/ic_camera_shutter_24"
+        app:iconGravity="textStart"
+        app:iconSize="96dp"
+        app:iconTint="@color/black"
+        app:rippleColor="#28000000"
+        app:layout_constraintTop_toBottomOf="@id/card_preview"
+        app:layout_constraintStart_toEndOf="@id/add_photo_button"
+        app:layout_constraintEnd_toStartOf="@id/flash_button"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_photo_button"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="Add Photo from Gallery"
+        app:icon="@drawable/ic_add_photo_24"
+        app:iconGravity="textStart"
+        app:iconSize="40dp"
+        app:iconTint="@color/black"
+        app:rippleColor="#28000000"
+        app:layout_constraintBaseline_toBaselineOf="@id/image_capture_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/image_capture_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/flash_button"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="Flash"
+        app:icon="@drawable/ic_flash_on_24"
+        app:iconGravity="textStart"
+        app:iconSize="40dp"
+        app:iconTint="@color/black"
+        app:rippleColor="#28000000"
+        app:layout_constraintBaseline_toBaselineOf="@id/image_capture_button"
+        app:layout_constraintStart_toEndOf="@id/image_capture_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

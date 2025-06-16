@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Full-screen background -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg"
+        android:contentDescription="Background Image" />
+
+    <!-- Form content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Circular logo -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="100dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/farmers_logo"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/RoundedImageView" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- App Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Raita Krushi Bandhu"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Welcome message -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Phone input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Mobile Number"
+                    android:textStyle="bold"
+                    android:inputType="phone"
+                    android:padding="16dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxStrokeWidth="2dp"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:hint="Password"
+                    android:textStyle="bold"
+                    app:boxBackgroundMode="outline"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Login button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="126dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="16dp"
+                android:text="LOG IN"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                app:backgroundTint="@color/green_500"
+                app:cornerRadius="55dp"
+                app:iconPadding="0dp" />
+
+            <!-- Forgot password -->
+
+            <!-- Register button -->
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="193dp"
+                android:layout_height="29dp"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Forgot Password?"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:text="REGISTER"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/orange_500"
+                app:cornerRadius="55dp"
+
+
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

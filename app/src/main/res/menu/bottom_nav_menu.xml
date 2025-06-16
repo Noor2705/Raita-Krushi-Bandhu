@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PlantActivity">
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile_24"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_address_24"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/diagnose"
+        android:icon="@drawable/ic_diagnose_24"
+        android:title="Diagnose" />
+
+    <item
+        android:id="@+id/my_plants"
+        android:icon="@drawable/ic_name_24"
+        android:title="My Plants" />
+
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_user_24"
+        android:title="Account" />
+</menu>

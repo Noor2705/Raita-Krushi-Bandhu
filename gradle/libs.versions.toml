@@ -1,0 +1,40 @@
+[versions]
+agp = "8.9.1"
+googleServices = "4.4.2"
+gradle = "8.11.1"
+gradleVersion = "8.1.4"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+playServicesLocation = "21.3.0"
+cameraCore = "1.4.2"
+cameraLifecycle = "1.4.2"
+cameraView = "1.4.2"
+exifinterface = "1.4.1"
+
+[libraries]
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+gradle-v814 = { module = "com.android.tools.build:gradle", version.ref = "gradleVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraCore" }
+camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraLifecycle" }
+camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "cameraView" }
+exifinterface = { group = "androidx.exifinterface", name = "exifinterface", version.ref = "exifinterface" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+
+
+

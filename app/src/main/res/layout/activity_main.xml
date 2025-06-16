@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg"
+        android:contentDescription="Background Image" />
+
+    <!-- Foreground Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Logo of the app -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/farmers_logo"
+            app:shapeAppearanceOverlay="@style/RoundedImageView" />
+
+        <!-- App Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Raita Krushi Bandhu"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Spacer to push content below -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_weight="0" />
+
+        <!-- Welcome Message -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="120dp"
+            android:gravity="center"
+            android:text="Welcome"
+            android:textColor="@android:color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="151dp"
+            android:layout_height="58dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/green_500"
+            android:onClick="openLogin"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="55dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Does not have account ?"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="155dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/orange_500"
+            android:onClick="openRegister"
+            android:text="Register"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:cornerRadius="55dp"/>
+
+    </LinearLayout>
+</FrameLayout>

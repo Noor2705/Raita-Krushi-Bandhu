@@ -1,0 +1,73 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.raitakrushibandhu'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.raitakrushibandhu"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // ✅ Enable ViewBinding here
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    // AndroidX + UI
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+
+    // Google Play Services
+    implementation libs.play.services.location
+
+    // Firebase BoM (version managed)
+    implementation platform('com.google.firebase:firebase-bom:33.11.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Lottie animations
+    implementation 'com.airbnb.android:lottie:6.0.0'
+
+    // Networking
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.google.android.gms:play-services-location:21.0.1' // or latest version
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0' // for HTTP requests
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+    // CameraX
+    implementation libs.camera.core
+    implementation libs.camera.lifecycle
+    implementation libs.camera.view
+    implementation libs.exifinterface
+    implementation "androidx.camera:camera-camera2:1.2.3"
+
+    // Testing
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
