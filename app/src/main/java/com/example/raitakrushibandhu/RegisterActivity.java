@@ -1,5 +1,6 @@
 package com.example.raitakrushibandhu;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -59,10 +60,17 @@ public class RegisterActivity extends AppCompatActivity {
 
         userRef.child(mobile).setValue(userData)
                 .addOnSuccessListener(aVoid -> {
+                    // Save login info locally
+                    SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("mobile", mobile);
+                    editor.apply();
+
                     Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(RegisterActivity.this, "Failed to Register", Toast.LENGTH_SHORT).show();
                 });
+
     }
 }

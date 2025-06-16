@@ -51,7 +51,7 @@
         <activity android:name=".ContactActivity"/>
         <activity android:name=".ThanksActivity"/>
         <activity android:name=".LegalNoticesActivity"/>
-        <activity android:name=".QuickstartActivity"/>
+        <activity android:name=".QuickStartActivity"/>
         <activity android:name=".CameraActivity" />
 
 
@@ -78,6 +78,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
 
 
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,11 +21,21 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/green_500"
+            android:elevation="4dp"
+            android:title="Raita Krushi Bandhu"
+            android:titleTextColor="@android:color/black" />
+
         <!-- Logo of the app -->
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:scaleType="centerCrop"
             android:src="@drawable/farmers_logo"
@@ -69,7 +80,7 @@
             android:text="Login"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:cornerRadius="55dp"/>
+            app:cornerRadius="55dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,7 +103,7 @@
             android:text="Register"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            app:cornerRadius="55dp"/>
+            app:cornerRadius="55dp" />
 
     </LinearLayout>
 </FrameLayout>

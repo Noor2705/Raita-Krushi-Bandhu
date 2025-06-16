@@ -67,9 +67,9 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
                             android:contentDescription="Arrow Icon"
-                            android:src="@drawable/ic_right_arrow"
-                            android:layout_marginHorizontal="8dp" />
+                            android:src="@drawable/ic_right_arrow" />
 
                         <ImageView
                             android:layout_width="0dp"
@@ -81,9 +81,9 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
                             android:contentDescription="Arrow Icon"
-                            android:src="@drawable/ic_right_arrow"
-                            android:layout_marginHorizontal="8dp" />
+                            android:src="@drawable/ic_right_arrow" />
 
                         <ImageView
                             android:layout_width="0dp"
@@ -126,23 +126,34 @@
                             android:textSize="14sp" />
                     </LinearLayout>
 
+                    <!-- Camera & Gallery Buttons -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/camera_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginStart="60dp"
                         android:text="Take a Picture"
                         android:textSize="18sp"
                         app:backgroundTint="@color/material_dynamic_primary50"
                         app:cornerRadius="55dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/gallery_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="15dp"
+                        android:text="Import from Gallery"
+                        android:textSize="18sp"
+                        app:backgroundTint="@color/material_dynamic_primary30"
+                        app:cornerRadius="55dp"
+                        app:iconGravity="textStart"
+                        app:iconPadding="8dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Weather Section -->
-
-
-            <!-- Captured Image and Diagnose Button -->
+            <!-- Captured Image Preview -->
             <ImageView
                 android:id="@+id/captured_image_preview"
                 android:layout_width="match_parent"
@@ -153,6 +164,7 @@
                 android:visibility="gone"
                 tools:ignore="HardcodedText" />
 
+            <!-- Diagnose and Clear Buttons -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/new_card"
                 style="?attr/materialCardViewElevatedStyle"
@@ -170,9 +182,9 @@
                         android:id="@+id/diagnose_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="16dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
                         android:text="Diagnose"
                         android:textAllCaps="false"
                         android:textSize="16sp"
@@ -183,7 +195,7 @@
                         android:id="@+id/clear"
                         android:layout_width="109dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginStart="30dp"
                         android:layout_marginTop="16dp"
                         android:text="Clear"
                         android:textAllCaps="false"
@@ -192,7 +204,6 @@
                         app:cornerRadius="16dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

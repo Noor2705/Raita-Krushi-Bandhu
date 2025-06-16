@@ -3,33 +3,31 @@
 
     <item
         android:id="@+id/setting"
-        android:title="Settings"/>
+        android:title="Settings" />
 
     <item
         android:id="@+id/feedback"
-        android:title="Give Feedback"/>
-
+        android:title="Give Feedback" />
 
     <item
         android:id="@+id/contact"
-        android:title="contact social"/>
+        android:title="Contact Social" />
 
     <item
         android:id="@+id/thx"
-        android:title="Thanks"/>
+        android:title="Thanks" />
 
     <item
         android:id="@+id/legal_notices"
-        android:title="Legal Notices"/>
+        android:title="Legal Notices" />
 
     <item
         android:id="@+id/quickstart"
-        android:title="Quickstart"/>
+        android:title="Quickstart" />
+
     <item
         android:id="@+id/menu_logout"
         android:title="Logout"
         android:orderInCategory="100"
         android:showAsAction="never" />
-
-
 </menu>

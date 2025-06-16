@@ -16,15 +16,8 @@
     <item
         android:id="@+id/diagnose"
         android:icon="@drawable/ic_diagnose_24"
-        android:title="Diagnose" />
+        android:title="Diagnose History" />
 
-    <item
-        android:id="@+id/my_plants"
-        android:icon="@drawable/ic_name_24"
-        android:title="My Plants" />
 
-    <item
-        android:id="@+id/account"
-        android:icon="@drawable/ic_user_24"
-        android:title="Account" />
+
 </menu>
