@@ -61,6 +61,10 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".DiagnoseHistory"
             tools:ignore="Instantiatable" />
+        <activity android:name=".SmartIrrigation"/>
+        <activity android:name=".NPKHistory"/>
+
+
 
 
 

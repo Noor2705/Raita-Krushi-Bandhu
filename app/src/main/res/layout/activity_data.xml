@@ -1,81 +1,295 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:background="#A0D0A0">
+    app:ignore="NamespaceTypo">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Soil Data"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
-
+    <!-- Background Image -->
     <ImageView
-        android:layout_width="47dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/weather_icon" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg"
+        android:contentDescription="Background" />
 
-    <TextView
-        android:id="@+id/weatherTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="Fetching weather..."
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+    <!-- Scrollable Foreground Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/moisture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Moisture: Loading..."
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-    <TextView
-        android:id="@+id/nitrogen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nitrogen: Loading..."
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- App Title -->
+            <TextView
+                android:id="@+id/tvAppTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Raita Krushi Bandhu"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#4CAF50"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
 
-    <TextView
-        android:id="@+id/phosphorus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phosphorus: Loading..."
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- Horizontal NPK Cards -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="3"
+                android:layout_marginBottom="16dp">
 
-    <TextView
-        android:id="@+id/potassium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Potassium: Loading..."
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+                <!-- Nitrogen Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    card_view:cardCornerRadius="12dp"
+                    card_view:cardElevation="6dp">
 
-    <Button
-        android:id="@+id/downloadButton"
-        android:text="Download Report"
-        android:backgroundTint="#000000"
-        android:textColor="#FFFFFF"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"/>
-</LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="Nitrogen"
+                            android:textStyle="bold"
+                            android:textColor="#4CAF50"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="4dp" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvNitrogen"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:textColor="#000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Phosphorus Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    card_view:cardCornerRadius="12dp"
+                    card_view:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="Phosphorus"
+                            android:textStyle="bold"
+                            android:textColor="#03A9F4"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvPhosphorus"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:textColor="#000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Potassium Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="12dp"
+                    card_view:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="Potassium"
+                            android:textStyle="bold"
+                            android:textColor="#FF9800"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvPotassium"
+                            android:text="0"
+                            android:textSize="24sp"
+                            android:textColor="#000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- History Button -->
+
+            <!-- Soil Moisture -->
+            <Button
+                android:id="@+id/btnNPKHistory"
+                android:layout_width="229dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#4CAF50"
+                android:text="View NPK History"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="55dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="16dp"
+                card_view:cardCornerRadius="12dp"
+                card_view:cardElevation="6dp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Soil Moisture"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#009688"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvMoisture"
+                        android:text="0%"
+                        android:textSize="24sp"
+                        android:textColor="#000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Temp and Humidity -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                card_view:cardCornerRadius="12dp"
+                card_view:cardElevation="6dp"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:weightSum="2">
+
+                    <!-- Temperature -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        card_view:cardCornerRadius="8dp"
+                        card_view:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="Temperature"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#E91E63"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/tvTemperature"
+                                android:text="0°C"
+                                android:textSize="24sp"
+                                android:textColor="#000"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Humidity -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        card_view:cardCornerRadius="8dp"
+                        card_view:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="Humidity"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#3F51B5"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/tvHumidity"
+                                android:text="0%"
+                                android:textSize="24sp"
+                                android:textColor="#000"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Smart Irrigation Button -->
+            <Button
+                android:id="@+id/btnSmartIrrigation"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#03A9F4"
+                android:text="Smart Irrigation"
+                android:textColor="#FFF"
+                android:layout_gravity="center"
+                app:cornerRadius="55dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
