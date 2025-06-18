@@ -57,6 +57,11 @@
         <activity android:name=".FullscreenImageAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".FullscreenImageActivity"/>
+        <activity android:name=".DiagnoseActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".DiagnoseHistory"
+            tools:ignore="Instantiatable" />
+
 
 
 

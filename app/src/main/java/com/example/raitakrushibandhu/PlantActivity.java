@@ -75,13 +75,16 @@ public class PlantActivity extends AppCompatActivity {
         galleryButton.setOnClickListener(v -> openGalleryPicker());
 
         diagnoseButton.setOnClickListener(v -> {
-            if (selectedBitmap != null || selectedImageUri != null) {
-                Toast.makeText(this, "Proceeding to diagnose...", Toast.LENGTH_SHORT).show();
-                // TODO: Call your ML model processing here
+            if (selectedImageUri != null) {
+                Intent intent = new Intent(this, DiagnoseActivity.class);
+                intent.putExtra("image_uri", selectedImageUri.toString());
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Please select or capture an image first.", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         clearButton.setOnClickListener(v -> clearImage());
 

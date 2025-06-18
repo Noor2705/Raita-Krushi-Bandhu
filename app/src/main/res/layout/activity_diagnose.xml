@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DiagnoseActivity">
+
+    <!-- Top Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/diagnose_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Diagnosis Result"
+        android:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Image Display with Zoom -->
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/diagnosis_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:contentDescription="Diagnosed Image" />
+
+            <!-- Progress bar -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp" />
+
+            <!-- Result Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:elevation="6dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/diagnosis_result"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Predicted Disease"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/diagnosis_confidence"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Confidence: --%"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#444444" />
+
+                    <TextView
+                        android:id="@+id/diagnosis_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Remedy / Description"
+                        android:textSize="14sp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="#555555" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Diagnose Another Button -->
+            <Button
+                android:id="@+id/button_diagnose_another"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diagnose Another"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/purple_500"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
