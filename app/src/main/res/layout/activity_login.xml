@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
 
     <!-- Full-screen background -->
     <ImageView
@@ -13,7 +14,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/login_bg"
-        android:contentDescription="Background Image" />
+        android:contentDescription="@string/login_background" />
 
     <!-- Form content -->
     <ScrollView
@@ -41,8 +42,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/farmers_logo"
                     android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/RoundedImageView" />
-
+                    app:shapeAppearanceOverlay="@style/RoundedImageView"
+                    android:contentDescription="@string/app_logo" />
             </com.google.android.material.card.MaterialCardView>
 
             <!-- App Title -->
@@ -53,7 +54,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="8dp" />
 
             <!-- Welcome message -->
             <TextView
@@ -70,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-
+                android:hint="Mobile Number"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
@@ -82,9 +83,8 @@
                     android:id="@+id/phoneET"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:hint="Mobile Number"
-                    android:textStyle="bold"
                     android:inputType="phone"
+                    android:textStyle="bold"
                     android:padding="16dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
@@ -95,6 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
+                android:hint="Password"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
@@ -107,21 +108,17 @@
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"
-                    android:hint="Password"
-                    android:textStyle="bold"
-                    app:boxBackgroundMode="outline"
                     android:inputType="textPassword"
+                    android:textStyle="bold"
                     android:padding="12dp"
                     android:singleLine="true"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    tools:ignore="HardcodedText" />
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Login button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
-                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="126dp"
                 android:layout_height="55dp"
                 android:layout_marginBottom="16dp"
@@ -129,16 +126,13 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/black"
                 app:backgroundTint="@color/green_500"
-                app:cornerRadius="55dp"
-                app:iconPadding="0dp" />
+                app:cornerRadius="55dp" />
 
             <!-- Forgot password -->
-
-            <!-- Register button -->
             <TextView
                 android:id="@+id/tvForgotPassword"
-                android:layout_width="193dp"
-                android:layout_height="29dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -147,6 +141,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <!-- Register button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_register"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -157,10 +152,7 @@
                 android:textColor="@android:color/white"
                 app:backgroundTint="@color/orange_500"
                 app:cornerRadius="55dp"
-
-
                 app:strokeWidth="2dp" />
-
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

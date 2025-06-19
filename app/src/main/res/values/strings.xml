@@ -1,22 +1,49 @@
 <resources>
+    <!-- App & Authentication -->
     <string name="app_name">Raita Krushi Bandhu</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email_phone">Email or phone</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">Welcome!</string>
     <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="receive_email">I don\'t want to receive emails with the latest plant news and recommendations from botanists.</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="invalid_password">Password must be &gt;5 characters</string>
+    <string name="login_failed">Login failed</string>
+    <string name="receive_email">I don’t want to receive emails with the latest plant news and recommendations from botanists.</string>
+
+    <!-- Main Diagnosis UI -->
+    <string name="take_picture">CAMERA</string>
+    <string name="import_gallery">GALLERY</string>
+    <string name="diagnose">Diagnose</string>
+    <string name="clear">Clear</string>
+    <string name="fab_camera">Camera</string>
+
+    <!-- Flow Labels -->
+    <string name="take_picture_text">Take a\npicture</string>
+    <string name="see_diagnosis_text">See\ndiagnosis</string>
+    <string name="get_medicine_text">Get\nmedicine</string>
+
+    <!-- Feature Cards -->
+    <string name="crop_info">🌾 Crop Info</string>
+    <string name="soil_check">🧪 Soil NPK Check</string>
+    <string name="weather_forecast">🌤 Weather Forecast</string>
+    <string name="diagnosis_history">📚 Diagnosis History</string>
+    <string name="profile_settings">⚙️ Profile / Settings</string>
+
+    <!-- Image Descriptions -->
+    <string name="background_desc">Background</string>
+    <string name="plant_icon_desc">Plant Icon</string>
+    <string name="diagnosis_icon_desc">Diagnosis Icon</string>
+    <string name="medicine_icon_desc">Medicine Icon</string>
+    <string name="arrow_icon_desc">Arrow Icon</string>
+    <string name="captured_image_desc">Captured Image</string>
+
+    <!-- Miscellaneous -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="contact_social"><![CDATA[Contact & Social]]></string>
-
-        <!-- Other strings -->
-
-        <string name="fab_camera">Camera</string>
-
+    <string name="contact_social"><![CDATA[Contact &amp; Social]]></string>
+    <string name="select_soil_type">Select Soil Type</string>
+    <string name="app_logo">App Logo</string>
+    <string name="login_background">Login Background</string>
 
 </resources>

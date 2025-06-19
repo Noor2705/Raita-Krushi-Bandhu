@@ -8,16 +8,29 @@
     android:layout_height="match_parent"
     tools:context=".PlantActivity">
 
-    <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/main_toolbar"
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/background_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:paddingVertical="20dp"
-        android:theme="?attr/actionBarTheme"
-        app:title="Raita Krushi Bandhu"
-        app:titleTextColor="@android:color/white" />
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg"
+        android:contentDescription="@string/background_desc"
+        android:alpha="1.0" />
+
+    <!-- App Bar with Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="@string/app_name"
+            app:titleTextColor="@android:color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <!-- Scrollable Content -->
     <androidx.core.widget.NestedScrollView
@@ -42,7 +55,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp">
+                android:layout_marginBottom="30dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -61,35 +76,35 @@
                             android:layout_width="0dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            android:contentDescription="Plant Icon"
+                            android:contentDescription="@string/plant_icon_desc"
                             android:src="@drawable/ic_plant" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
-                            android:contentDescription="Arrow Icon"
+                            android:contentDescription="@string/arrow_icon_desc"
                             android:src="@drawable/ic_right_arrow" />
 
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            android:contentDescription="Diagnosis Icon"
+                            android:contentDescription="@string/diagnosis_icon_desc"
                             android:src="@drawable/ic_diagnosis" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
-                            android:contentDescription="Arrow Icon"
+                            android:contentDescription="@string/arrow_icon_desc"
                             android:src="@drawable/ic_right_arrow" />
 
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            android:contentDescription="Medicine Icon"
+                            android:contentDescription="@string/medicine_icon_desc"
                             android:src="@drawable/ic_medicine" />
                     </LinearLayout>
 
@@ -105,7 +120,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Take a\npicture"
+                            android:text="@string/take_picture_text"
                             android:gravity="center"
                             android:textSize="14sp" />
 
@@ -113,7 +128,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="See\ndiagnosis"
+                            android:text="@string/see_diagnosis_text"
                             android:gravity="center"
                             android:textSize="14sp" />
 
@@ -121,35 +136,38 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Get\nmedicine"
+                            android:text="@string/get_medicine_text"
                             android:gravity="center"
                             android:textSize="14sp" />
                     </LinearLayout>
 
                     <!-- Camera & Gallery Buttons -->
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/camera_button"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginStart="60dp"
-                        android:text="Take a Picture"
-                        android:textSize="18sp"
-                        app:backgroundTint="@color/material_dynamic_primary50"
-                        app:cornerRadius="55dp" />
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="16dp">
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/gallery_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="15dp"
-                        android:text="Import from Gallery"
-                        android:textSize="18sp"
-                        app:backgroundTint="@color/material_dynamic_primary30"
-                        app:cornerRadius="55dp"
-                        app:iconGravity="textStart"
-                        app:iconPadding="8dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/camera_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/take_picture"
+                            android:textSize="18sp"
+                            app:backgroundTint="@color/material_dynamic_primary50"
+                            app:cornerRadius="55dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/gallery_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/import_gallery"
+                            android:textSize="18sp"
+                            app:backgroundTint="@color/material_dynamic_primary30"
+                            app:cornerRadius="55dp" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -158,11 +176,11 @@
                 android:id="@+id/captured_image_preview"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:contentDescription="Captured Image"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:contentDescription="@string/captured_image_desc"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_plant"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:visibility="gone" />
 
             <!-- Diagnose and Clear Buttons -->
             <com.google.android.material.card.MaterialCardView
@@ -170,22 +188,23 @@
                 style="?attr/materialCardViewElevatedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:gravity="center">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/diagnose_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="10dp"
-                        android:text="Diagnose"
+                        android:text="@string/diagnose"
                         android:textAllCaps="false"
                         android:textSize="16sp"
                         app:backgroundTint="@color/diagnose"
@@ -193,16 +212,100 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/clear"
-                        android:layout_width="109dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Clear"
+                        android:text="@string/clear"
                         android:textAllCaps="false"
                         android:textSize="16sp"
                         app:backgroundTint="@color/myColor"
                         app:cornerRadius="16dp" />
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Feature Cards -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_crop_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/crop_info"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_soil_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/soil_check"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/weather_forecast"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/diagnosis_history"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/profile_settings"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

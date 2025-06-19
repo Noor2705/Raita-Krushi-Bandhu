@@ -7,10 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.database.*;
 
 public class LoginActivity extends AppCompatActivity {
@@ -24,41 +22,32 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Check if user already logged in
+        // Check session
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String loggedInUser = prefs.getString("loggedInUser", null);
         if (loggedInUser != null) {
-            // User already logged in, go to HomeActivity directly
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(intent);
-            finish(); // close login activity so user can't come back with back button
+            startActivity(new Intent(this, HomeActivity.class));
+            finish();
             return;
         }
 
         setContentView(R.layout.activity_login);
 
-        // Bind views
         phoneET          = findViewById(R.id.phoneET);
         passwordET       = findViewById(R.id.etPassword);
         loginBtn         = findViewById(R.id.btnLogin);
         registerBtn      = findViewById(R.id.btn_register);
         forgotPasswordTV = findViewById(R.id.tvForgotPassword);
 
-        // Firebase Realtime Database “Users” node
         userRef = FirebaseDatabase.getInstance().getReference("Users");
 
-        // Login flow
         loginBtn.setOnClickListener(v -> loginUser());
 
-        // Navigate to Register
         registerBtn.setOnClickListener(v ->
-                startActivity(new Intent(this, RegisterActivity.class))
-        );
+                startActivity(new Intent(this, RegisterActivity.class)));
 
-        // Navigate to Forgot Password
         forgotPasswordTV.setOnClickListener(v ->
-                startActivity(new Intent(this, ForgotPasswordActivity.class))
-        );
+                startActivity(new Intent(this, ForgotPasswordActivity.class)));
     }
 
     private void loginUser() {
@@ -66,13 +55,10 @@ public class LoginActivity extends AppCompatActivity {
         String pass  = passwordET.getText().toString().trim();
 
         if (phone.isEmpty() || pass.isEmpty()) {
-            Toast.makeText(this,
-                    "Please fill in both fields",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in both fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Check phone node in DB
         userRef.child(phone)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -80,27 +66,19 @@ public class LoginActivity extends AppCompatActivity {
                         if (snap.exists()) {
                             String stored = snap.child("password").getValue(String.class);
                             if (pass.equals(stored)) {
-                                Toast.makeText(LoginActivity.this,
-                                        "Login successful",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
 
-                                // Save logged in user session in SharedPreferences
+                                // Save session
                                 SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
                                 prefs.edit().putString("loggedInUser", phone).apply();
 
-                                // Start HomeActivity
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                startActivity(intent);
+                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                 finish();
                             } else {
-                                Toast.makeText(LoginActivity.this,
-                                        "Incorrect password",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Incorrect password", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(LoginActivity.this,
-                                    "User not found. Please register.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "User not found. Please register.", Toast.LENGTH_SHORT).show();
                         }
                     }
 

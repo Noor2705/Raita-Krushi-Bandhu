@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/diagnosedImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/diseaseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disease Name: Leaf Blight"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/confidenceScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confidence: 92%"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/remedyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remedy: Apply fungicide twice a week"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/saveReportBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Report"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>

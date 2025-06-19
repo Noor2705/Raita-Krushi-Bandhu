@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/cropImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_crop_placeholder"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Crop image" />
+
+        <TextView
+            android:id="@+id/cropNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crop Name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/soilTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Soil Type: "
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/npkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NPK Requirement: "
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/commonDiseasesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Common Diseases: "
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp" />
+
+    </LinearLayout>
+</ScrollView>

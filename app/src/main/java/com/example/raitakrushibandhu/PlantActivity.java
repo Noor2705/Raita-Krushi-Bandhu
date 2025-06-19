@@ -20,6 +20,7 @@ import androidx.core.app.ActivityCompat;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class PlantActivity extends AppCompatActivity {
 
     private ImageView capturedImagePreview;
     private MaterialButton cameraButton, galleryButton, diagnoseButton, clearButton;
+    private MaterialCardView card_crop_info,card_soil_check,card_weather,card_history,card_profile;
 
     private Bitmap selectedBitmap = null;
     private Uri selectedImageUri = null;
@@ -42,6 +44,7 @@ public class PlantActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant);
+
 
         Toolbar toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
@@ -54,6 +57,12 @@ public class PlantActivity extends AppCompatActivity {
         galleryButton = findViewById(R.id.gallery_button);
         diagnoseButton = findViewById(R.id.diagnose_button);
         clearButton = findViewById(R.id.clear);
+        card_crop_info = findViewById(R.id.card_crop_info);
+        card_soil_check = findViewById(R.id.card_soil_check);
+        card_weather = findViewById(R.id.card_weather);
+        card_history = findViewById(R.id.card_history);
+        card_profile = findViewById(R.id.card_profile);
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -104,6 +113,17 @@ public class PlantActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        card_crop_info.setOnClickListener(view ->
+                startActivity(new Intent(PlantActivity.this, CropInfoActivity.class)));
+        card_soil_check.setOnClickListener(view ->
+                startActivity(new Intent(PlantActivity.this, SoilNpkCheckerActivity.class)));
+        card_weather.setOnClickListener(view ->
+                startActivity(new Intent(PlantActivity.this, WeatherForecastActivity.class)));
+        card_history.setOnClickListener(view ->
+                startActivity(new Intent(PlantActivity.this, DiagnosisHistoryActivity.class)));
+        card_profile.setOnClickListener(view ->
+                startActivity(new Intent(PlantActivity.this, ProfileSettingsActivity.class)));
+
 
         checkAndRequestPermissions();
     }

@@ -58,11 +58,17 @@
             tools:ignore="Instantiatable" />
         <activity android:name=".FullscreenImageActivity"/>
         <activity android:name=".DiagnoseActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".DiagnoseHistory"
-            tools:ignore="Instantiatable" />
+        <activity android:name=".ProfileSettingsActivity" />
+        <activity android:name=".DiagnosisHistoryActivity"/>
+        <activity android:name=".CropDetailActivity"/>
+        <activity android:name=".CropInfoActivity"/>
+        <activity android:name=".DiagnosisResultActivity"/>
         <activity android:name=".SmartIrrigation"/>
         <activity android:name=".NPKHistory"/>
+
+        <activity android:name=".WeatherForecastActivity"/>
+        <activity android:name=".SoilNpkCheckerActivity"/>
+        <activity android:name=".EditProfileActivity"/>
 
 
 

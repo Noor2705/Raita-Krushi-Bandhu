@@ -225,14 +225,14 @@ public class HomeActivity extends AppCompatActivity {
             int id = item.getItemId();
 
             if (id == R.id.profile) {
-                if (!getClass().equals(ProfileActivity.class)) {
-                    startActivity(new Intent(this, ProfileActivity.class));
+                if (!getClass().equals(ProfileSettingsActivity.class)) {
+                    startActivity(new Intent(this, ProfileSettingsActivity.class));
                     overridePendingTransition(0, 0);
                 }
                 return true;
             } else if (id == R.id.diagnose) {
-                if (!getClass().equals(DiagnoseHistory.class)) {
-                    startActivity(new Intent(this, DiagnoseHistory.class));
+                if (!getClass().equals(DiagnosisHistoryActivity.class)) {
+                    startActivity(new Intent(this, DiagnosisHistoryActivity.class));
                     overridePendingTransition(0, 0);
                 }
                 return true;
